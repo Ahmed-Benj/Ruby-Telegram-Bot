@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'telegram/bot'
 
 token = '1799533455:AAEmVvoRD_K-0qAELHUJlphJDgroSo52ryM'

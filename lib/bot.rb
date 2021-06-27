@@ -19,7 +19,7 @@ class Telegrambot
       message.reply do |reply|
         case command
         when /start/i
-          reply.text = "Hello #{message.from.first_name}, Welcome to sports quotes bot, use commands \n /start - start the bot \n /stop - stop the bot \n /quote - get quote"
+          reply.text = "Hello #{message.from.first_name}, Welcome to sports quotes bot, use commands \n /start - start the bot \n /stop - stop the bot \n /benefit - get sport benefit"
         when /stop/i
           reply.text = "Good Bye, #{message.from.first_name}"
         when /benefit/i

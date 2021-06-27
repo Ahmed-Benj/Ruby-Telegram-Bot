@@ -22,10 +22,10 @@ class Telegrambot
           reply.text = "Hello #{message.from.first_name}, Welcome to sports quotes bot, use commands \n /start - start the bot \n /stop - stop the bot \n /quote - get quote"
         when /stop/i
           reply.text = "Good Bye, #{message.from.first_name}"
-        when /quote/i
-          quotes = Quote.new
-          quote = quotes.getrandomquote
-          reply.text = quote['text'].to_s
+        when /benefit/i
+          benefits = Benefit.new
+          benefit = benefits.getrandombenefit
+          reply.text = benefit['title'].to_s + " :\n\n" + benefit['text'].to_s
         else
           reply.text = 'Unknown command'
         end

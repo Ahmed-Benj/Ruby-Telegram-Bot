@@ -1,17 +1,17 @@
 # A class to get random quote from json file
-class Quote
-  @quote = nil
+class Benefit
+  @benefit = nil
 
   def initialize
-    @quote = readquotesfile
+    @benefit = readbenefitsfile
   end
 
-  def readquotesfile
-    file = File.read('C:\Users\abenjmii\Desktop\quotes.json')
+  def readbenefitsfile
+    file = File.read('C:\Users\abenjmii\Desktop\Microverse\Projects ruby\Capstone Ruby\Ruby-Telegram-Bot\lib\quotes.json')
     JSON.parse(file)
   end
 
-  def getrandomquote
-    @quote.sample
+  def getrandombenefit
+    @benefit.sample
   end
 end

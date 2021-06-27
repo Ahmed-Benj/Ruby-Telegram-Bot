@@ -5,6 +5,7 @@
 # rubocop: disable Metrics/AbcSize
 
 require 'telegram_bot'
+require_relative '../lib/quote'
 
 # This class constructs the telegram bot that will post benefits about sports quotes
 class Telegrambot
@@ -24,6 +25,10 @@ class Telegrambot
           reply.text = "Hello #{message.from.first_name}, Welcome to sports quotes bot, use commands \n /start - start the bot \n /stop - stop the bot \n /quote - get quote"
         when /stop/i
           reply.text = "Good Bye, #{message.from.first_name}"
+        when /quote/i
+          quotes = Quote.new
+          quote = quotes.getrandomquote
+          reply.text = quote['text'].to_s
         else
           reply.text = 'Unknown command'
         end

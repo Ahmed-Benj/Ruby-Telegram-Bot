@@ -25,7 +25,7 @@ class Telegrambot
         when /benefit/i
           benefits = Benefit.new
           benefit = benefits.getrandombenefit
-          reply.text = benefit['title'].to_s + " :\n\n" + benefit['text'].to_s
+          reply.text = "#{benefit['title']} :\n\n#{benefit['text']}"
         else
           reply.text = 'Unknown command'
         end

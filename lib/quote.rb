@@ -7,7 +7,7 @@ class Benefit
   end
 
   def readbenefitsfile
-    file = File.read('C:\Users\abenjmii\Desktop\Microverse\Projects ruby\Capstone Ruby\Ruby-Telegram-Bot\lib\quotes.json')
+    file = File.read(File.join(File.dirname(__FILE__),'/quotes.json'))
     JSON.parse(file)
   end
 

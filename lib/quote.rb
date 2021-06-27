@@ -7,7 +7,7 @@ class Benefit
   end
 
   def readbenefitsfile
-    file = File.read(File.join(File.dirname(__FILE__),'/quotes.json'))
+    file = File.read(File.join(File.dirname(__FILE__), '/quotes.json'))
     JSON.parse(file)
   end
 

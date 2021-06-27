@@ -1,15 +1,39 @@
-require 'telegram/bot'
+# frozen_string_literal: true
 
-token = '1799533455:AAEmVvoRD_K-0qAELHUJlphJDgroSo52ryM'
+# rubocop: disable Layout/LineLength
+# rubocop: disable Metrics/MethodLength
+# rubocop: disable Metrics/AbcSize
 
-Telegram::Bot::Client.run(token) do |bot|
-  bot.listen do |message|
-    case message.text
-    when '/start'
-      bot.api.send_message(chat_id: message.chat.id,
-                           text: "Hello #{message.from.first_name}, Welcome to daily schedule bot, use commands /start")
-    when '/stop'
-      bot.api.send_message(chat_id: message.chat.id, text: "Good Bye, #{message.from.first_name}")
+require 'telegram_bot'
+
+# This class constructs the telegram bot that will post benefits about sports quotes
+class Telegrambot
+  def initialize
+    @token = '1799533455:AAEmVvoRD_K-0qAELHUJlphJDgroSo52ryM'
+  end
+
+  def runbot
+    bot = TelegramBot.new(token: @token)
+    bot.get_updates(fail_silently: true) do |message|
+      puts "@#{message.from.username}: #{message.text}"
+      command = message.get_command_for(bot)
+
+      message.reply do |reply|
+        case command
+        when /start/i
+          reply.text = "Hello #{message.from.first_name}, Welcome to sports quotes bot, use commands \n /start - start the bot \n /stop - stop the bot \n /quote - get quote"
+        when /stop/i
+          reply.text = "Good Bye, #{message.from.first_name}"
+        else
+          reply.text = 'Unknown command'
+        end
+        puts "sending #{reply.text.inspect} to @#{message.from.username}"
+        reply.send_with(bot)
+      end
     end
   end
 end
+
+# rubocop: enable Layout/LineLength
+# rubocop: enable Metrics/MethodLength
+# rubocop: enable Metrics/AbcSize

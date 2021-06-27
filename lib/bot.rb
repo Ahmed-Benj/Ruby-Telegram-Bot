@@ -1,8 +1,5 @@
-# frozen_string_literal: true
-
 # rubocop: disable Layout/LineLength
 # rubocop: disable Metrics/MethodLength
-# rubocop: disable Metrics/AbcSize
 
 require 'telegram_bot'
 require_relative '../lib/quote'
@@ -41,4 +38,3 @@ end
 
 # rubocop: enable Layout/LineLength
 # rubocop: enable Metrics/MethodLength
-# rubocop: enable Metrics/AbcSize

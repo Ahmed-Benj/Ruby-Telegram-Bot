@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # A class to get random quote from json file
 class Quote
   @quote = nil

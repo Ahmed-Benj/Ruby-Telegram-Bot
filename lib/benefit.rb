@@ -3,7 +3,7 @@ class Benefit
   @benefit = nil
 
   def initialize
-    @benefit = readbenefitsfile
+    @benefit = read_benefits_file
   end
 
   def read_benefits_file

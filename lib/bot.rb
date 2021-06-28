@@ -2,7 +2,7 @@
 # rubocop: disable Metrics/MethodLength
 
 require 'telegram_bot'
-require_relative '../lib/quote'
+require_relative '../lib/benefit'
 
 # This class constructs the telegram bot that will post benefits about sports quotes
 class Telegrambot
@@ -24,7 +24,7 @@ class Telegrambot
           reply.text = "Good Bye, #{message.from.first_name}"
         when /benefit/i
           benefits = Benefit.new
-          benefit = benefits.getrandombenefit
+          benefit = benefits.getrandom_benefit
           reply.text = "#{benefit['title']} :\n\n#{benefit['text']}"
         else
           reply.text = 'Unknown command'

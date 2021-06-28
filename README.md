@@ -12,12 +12,12 @@ This project involves the implementation of a telegram bot that gives quotes abo
 - Clone the project
 - Create Telegram Bot with https://t.me/BotFather 
 - Type `/newbot` and follow instructions to get bot token
-- Put your bot token in the `bot.rb` initialize method :
+- Put your bot token in the `config.rb` file :
 
-        class Telegrambot
-            def initialize
-                @token = [PUT_YOUR_TOKEN_HERE]
-            end    
+        module Config
+            TELEGRAM_API = [PUT_YOUR_TOKEN_HERE]
+        end
+ 
 - Run `ruby main.rb` in the folder `bin`
 - `/start` the telegram bot
 - follow instructions

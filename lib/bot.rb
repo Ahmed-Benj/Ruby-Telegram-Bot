@@ -10,7 +10,7 @@ class Telegrambot
     @token = '1799533455:AAEmVvoRD_K-0qAELHUJlphJDgroSo52ryM'
   end
 
-  def runbot
+  def run_bot
     bot = TelegramBot.new(token: @token)
     bot.get_updates(fail_silently: true) do |message|
       puts "@#{message.from.username}: #{message.text}"

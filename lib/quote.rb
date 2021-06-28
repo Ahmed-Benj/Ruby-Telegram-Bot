@@ -6,12 +6,12 @@ class Benefit
     @benefit = readbenefitsfile
   end
 
-  def readbenefitsfile
+  def read_benefits_file
     file = File.read(File.join(File.dirname(__FILE__), '/quotes.json'))
     JSON.parse(file)
   end
 
-  def getrandombenefit
+  def get_random_benefit
     @benefit.sample
   end
 end

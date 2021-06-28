@@ -11,7 +11,7 @@ class Benefit
     JSON.parse(file)
   end
 
-  def get_random_benefit
+  def getrandom_benefit
     @benefit.sample
   end
 end

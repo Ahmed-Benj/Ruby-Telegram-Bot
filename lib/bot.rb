@@ -3,15 +3,14 @@
 
 require 'telegram_bot'
 require_relative '../lib/benefit'
+require_relative '../lib/config'
 
 # This class constructs the telegram bot that will post benefits about sports quotes
 class Telegrambot
-  def initialize
-    @token = '1799533455:AAEmVvoRD_K-0qAELHUJlphJDgroSo52ryM'
-  end
+  def initialize; end
 
   def run_bot
-    bot = TelegramBot.new(token: @token)
+    bot = TelegramBot.new(token: Config::TELEGRAM_API)
     bot.get_updates(fail_silently: true) do |message|
       puts "@#{message.from.username}: #{message.text}"
       command = message.get_command_for(bot)

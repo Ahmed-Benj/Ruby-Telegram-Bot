@@ -1,20 +1,25 @@
 # Ruby-Telegram-Bot
 
-This project involves implementation of a telegram bot that gives quote about benefits of sports when asked.
+This project involves the implementation of a telegram bot that gives quotes about the benefits of sports when asked.
 
 ## Built With
 
 - Ruby
 - Telegram
 
-## Getting Started - How to deploy on your own machine
+## Getting Started - How to deploy on your machine
 
 - Clone the project
-- Create Telegram Bot with '@BotFather'
-- Type '/newbot' and follow instructions to get bot token
-- Put your bot token in the 'bot.rb' initialize method
+- Create Telegram Bot with https://t.me/BotFather 
+- Type `/newbot` and follow instructions to get bot token
+- Put your bot token in the `bot.rb` initialize method :
+
+        class Telegrambot
+            def initialize
+                @token = [PUT_YOUR_TOKEN_HERE]
+            end    
 - Run `ruby main.rb` in the folder `bin`
-- '/start' the telegram bot
+- `/start` the telegram bot
 - follow instructions
 
 ## Live Demo
@@ -41,14 +46,14 @@ This project involves implementation of a telegram bot that gives quote about be
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome! Start by:
+Contributions, issues, and feature requests are welcome! Start by:
 
 - Fork the project
 - Clone the forked project
 - Run `git checkout -b your-branch-name`
 - Make modifications
 - Push
-- Make pull request to the development branch of the original project for a review
+- Make a pull request to the development branch of the original project for a review
 
 ## Show your support
 

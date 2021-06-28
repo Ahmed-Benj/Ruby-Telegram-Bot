@@ -4,11 +4,6 @@ require 'json'
 describe Benefit do
   let(:benefits) { Benefit.new }
 
-  describe '#read_benefits_file' do
-    it 'returns a hash' do
-      expect(benefits.read_benefits_file.class).to eq(Array)
-    end
-  end
   describe '#getrandom_benefit' do
     it 'title returns a string' do
       benefit = benefits.getrandom_benefit
